@@ -1,5 +1,3 @@
-module Spectral
 
 include("similarity.jl")
-
-end
+include("graphconstr.jl")
