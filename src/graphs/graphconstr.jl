@@ -10,10 +10,8 @@ Construct a fully connected graph representing the `Clusters` of `exp`. Weights 
 `vars` should be a `Vector` of `String`s, each matching a column name in the `info` DF of `exp`. σ controls the width of the gaussian kernel.
 """
 function connectedgraph(exp::AbstractExperiment, vars::Vector, σ=1)
-    inf = deepcopy(info(exp, vars))
-    for c = 1:length(vars)
-        inf[:, c] = LaskaStats.rangenormalize(inf[:, c], extrema(inf[:, c]))
-    end
+    inf = info(exp, vars) |> Array
+    LaskaStats.rangenormalizecols!(inf)
     nclusters = size(inf, 1)
     vs = collect(transpose(Array(inf)))
     adj = Matrix{Float64}(undef, nclusters, nclusters)
