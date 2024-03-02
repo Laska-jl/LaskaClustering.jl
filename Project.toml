@@ -1,11 +1,12 @@
 name = "LaskaClustering"
 uuid = "a627b554-171b-40fd-98ba-d667562ed0bb"
 authors = ["Eliassj <elias.sjolin@gmail.com> and contributors"]
-version = "1.0.1-DEV"
+version = "1.0.2-DEV"
 
 [deps]
 Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
 LaskaCore = "9ad29ce2-7782-4744-ab48-6ef9cc0286bb"
+LaskaStats = "de767ba9-e829-4e7c-bf82-062dc00bf36c"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 NearestNeighbors = "b8a86587-4115-5ab1-83bc-aa920d37bbce"
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"

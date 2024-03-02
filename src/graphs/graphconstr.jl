@@ -12,7 +12,7 @@ Construct a fully connected graph representing the `Clusters` of `exp`. Weights 
 function connectedgraph(exp::AbstractExperiment, vars::Vector, σ=1)
     inf = deepcopy(info(exp, vars))
     for c = 1:length(vars)
-        inf[:, c] = LaskaCore.normalize(inf[:, c], extrema(inf[:, c]))
+        inf[:, c] = LaskaStats.normalize(inf[:, c], extrema(inf[:, c]))
     end
     nclusters = size(inf, 1)
     vs = collect(transpose(Array(inf)))
@@ -24,7 +24,7 @@ end
 function knngraph(exp::AbstractExperiment, vars::Vector, k::Int, σ=1)
     inf = Array(info(exp, vars))
     for c = 1:length(vars)
-        LaskaCore.normalize!(inf[:, c], extrema(inf[:, c]))
+        LaskaStats.normalize!(inf[:, c], extrema(inf[:, c]))
     end
     inf = collect(transpose(inf))
     tree = KDTree(inf, leafsize=10)
