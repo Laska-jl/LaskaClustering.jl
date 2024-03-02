@@ -1,7 +1,7 @@
 name = "LaskaClustering"
 uuid = "a627b554-171b-40fd-98ba-d667562ed0bb"
 authors = ["Eliassj <elias.sjolin@gmail.com> and contributors"]
-version = "1.0.2-DEV"
+version = "1.0.3-DEV"
 
 [deps]
 Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
